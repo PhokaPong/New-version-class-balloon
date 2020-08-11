@@ -1,8 +1,8 @@
 //Phoka Pongpaet
 // 11/08/2020
-// add simple animation
-int i = 400;
-
+// add click for stop animation
+int i = 625;
+boolean click = false;
 void setup(){
 
   size(800,600);
@@ -23,12 +23,12 @@ void Balloon(int xpos,int ypos,int diameter,int length_line ){
 }
 
 void draw(){
+  if(click == false){
+  i-= 1;
 
-  i--;
+  if (i<-100){
 
-  if (i==200){
-
-    i = 400;
+    i = height+75;
 
   }
 
@@ -36,6 +36,17 @@ void draw(){
 
   Balloon(400,i,50,50);
 
-  delay(50);
-
+  
 }
+}
+void mousePressed(){
+  
+   //click = !click;
+   if (click == true){
+   click =false;
+   }
+   else if (click ==false){
+   click =true;
+   }
+ 
+}  
